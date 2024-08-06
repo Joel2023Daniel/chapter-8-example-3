@@ -66,7 +66,7 @@ jobs:
 
       #confirm that service is running
       - name: Pod Check
-        run: kubectl get pods
+        run: sleep 30 && kubectl get pods
 
       - name: Service Check
-        run: kubectl get services
+        run: sleep 30 && kubectl get services
