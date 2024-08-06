@@ -59,6 +59,9 @@ jobs:
           base64-kube-config: ${{ secrets.KUBE_CONFIG }}
           kubectl-version: v1.24.2
       
+
+      - name: Set Context
+        run: kubectl config set-context sit722joeldaniel
       #
       # Expands the configuration template and deploys the microservice.
       #
@@ -66,6 +69,9 @@ jobs:
         run: ./scripts/deploy.sh
 
       #confirm that service is running
+      - name: Kubernetes context Check
+        run: kubecton config current-context
+      
       - name: Pod Check
         run: sleep 30 && kubectl get pods
 
