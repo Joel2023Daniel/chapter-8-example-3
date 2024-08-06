@@ -63,3 +63,10 @@ jobs:
       #
       - name: Deploy
         run: ./scripts/deploy.sh
+
+      #confirm that service is running
+      - name: Pod Check
+        run: kubectl get pods
+
+      - name: Service Check
+        run: kubectl get services
