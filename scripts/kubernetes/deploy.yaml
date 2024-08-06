@@ -24,8 +24,8 @@ spec:
       containers: 
       - name: video-streaming
         image: $CONTAINER_REGISTRY/video-streaming:$VERSION
-        imagePullPolicy: Never
-        #imagePullPolicy: IfNotPresent
+        #imagePullPolicy: Never
+        imagePullPolicy: IfNotPresent
         env:
         - name: PORT
           value: "4000"
